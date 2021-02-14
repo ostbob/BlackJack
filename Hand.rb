@@ -1,11 +1,11 @@
 class Hand
   attr_accessor :cards
 
-  def initialize(cards)
-    @cards = cards
+  def initialize()
+    @cards = []
   end
 
-  def add_card(card)
-    @cards << card
+  def add_card_from_deck(deck)
+    @cards << deck.cards.pop
   end
 end
