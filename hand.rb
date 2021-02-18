@@ -16,15 +16,15 @@ class Hand
   def value
     val = 0
     @cards.each do |card|
-      if card.face.is_a?(Integer) && card.face.between?(2, 10)
-        val += card.face
-      elsif card.face == 'Ace' && val + 11 > 21
-        val += 1
-      elsif card.face == 'Ace'
-        val += 11
-      else
-        val += 10
-      end
+      val += if card.face.is_a?(Integer)
+               card.face
+             elsif card.face == 'Ace' && val + 11 > 21
+               1
+             elsif card.face == 'Ace'
+               11
+             else
+               10
+             end
     end
     val
   end

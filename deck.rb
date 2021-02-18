@@ -5,8 +5,8 @@ class Deck
 
   def initialize
     @cards = []
-    faces = *(2..10).to_a + ['Jack','Queen','King','Ace']
-    suits = ['+','<3','^','<>']
+    faces = *(2..10).to_a + %w[Jack Queen King Ace]
+    suits = ['+', '<3', '^', '<>']
     faces.each do |face|
       suits.each do |suit|
         @cards << Card.new(face, suit)
